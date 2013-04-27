@@ -5,6 +5,7 @@ class CreateStatuses < ActiveRecord::Migration
       t.integer :watchers
       t.integer :forks
       t.integer :issues
+      t.references :library
 
       t.timestamps
     end
