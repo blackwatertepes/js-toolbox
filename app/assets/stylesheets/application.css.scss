@@ -1,0 +1,47 @@
+@font-face {
+	font-family: "Lobster";
+	src: url('/assets/lobster.otf');
+}
+
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.container {
+	width: 960px;
+	padding: 0 20px 0 20px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {
+	height: 120px;
+	background-color: #000;
+	color: #fff;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	
+	.main {
+		h1 {
+			margin: 20px 0 20px 0;
+			font-size: 40px;
+			font-family: "Lobster", Helvetica, arial, serif;
+		}
+	}
+	
+	.sub {
+		background: #A61414;
+		font-size: 10px;
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		
+		h2 {
+			margin: 0px;
+			line-height: 30px;
+			padding-bottom: 3px;
+		}
+	}
+}
