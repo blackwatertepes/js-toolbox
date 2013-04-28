@@ -12,10 +12,10 @@ namespace :status do
       response = conn.get lib_url
       data = JSON.parse(response.body)
       params = {watchers: data["watchers"], issues: data["open_issues"], forks: data["forks"]}
-      
-      response = conn.get "#{lib_url}/downloads"
-      data = JSON.parse(response.body)
-      params.merge({downloads: data.last["download_count"]}) if data.last
+       
+      # response = conn.get "#{lib_url}/downloads"
+      # data = JSON.parse(response.body)
+      # params.merge({downloads: data.last["download_count"]}) if data.last
       
       Status.create(params.merge({library_id: library.id}))
     end

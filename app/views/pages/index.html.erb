@@ -1,5 +1,5 @@
 <div class="libraries">
-	<%= @libraries.each do |library| %>
+	<% @libraries.each do |library| %>
 		<div class="library">
 			<h3><%= library.author %>/<%= library.name %></h3>
 			<p><%= library.description %></p>
@@ -10,20 +10,16 @@
 			
 			<section>
 				<div class="set">
-					<span class="label">Downloads</span>
-					<span class="field">0</span>
-				</div>
-				<div class="set">
 					<span class="label">Watchers</span>
-					<span class="field">0</span>
+					<span class="field"><%= library.watchers %></span>
 				</div>
 				<div class="set">
 					<span class="label">Forks</span>
-					<span class="field">0</span>
+					<span class="field"><%= library.forks %></span>
 				</div>
 				<div class="set">
 					<span class="label">Issues</span>
-					<span class="field">0</span>
+					<span class="field"><%= library.issues %></span>
 				</div>
 			</section>
 		</div>
