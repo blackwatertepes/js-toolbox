@@ -20,13 +20,14 @@ ActiveRecord::Schema.define(:version => 20130427010501) do
   end
 
   create_table "libraries", :force => true do |t|
+    t.integer  "github_id"
     t.string   "name"
     t.string   "author"
     t.text     "description"
     t.string   "website_url"
     t.string   "doc_url"
-    t.string   "github_url"
     t.integer  "category_id"
+    t.datetime "pushed_at"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
