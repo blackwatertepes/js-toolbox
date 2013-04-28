@@ -50,6 +50,14 @@ namespace :status do
   task all: [:frameworks_front, :utilities, :frameworks_full, :toolkits, :forms, :charts]
 end
 
+desc "Pings PING_URL to keep a dyno alive"
+task :dyno_ping do
+  require "net/http"
+
+  uri = URI('http://js-toolbox.org')
+  Net::HTTP.get_response(uri)
+end
+
 def establish_connection
   url = URI.parse("")
   conn = Faraday.new :url => 'https://api.github.com', ssl: {verify: false} do |c|
