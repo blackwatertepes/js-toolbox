@@ -135,6 +135,10 @@
 #   {github_id: 7008068, author: 'tenXer', name: 'xcharts',
 #       description: "A D3-based library for building custom charts and graphs.",
 #       website_url: "http://tenxer.github.com/xcharts",
-#       doc_url: "http://tenxer.github.io/xcharts/docs"}].each do |library|
+#       doc_url: "http://tenxer.github.io/xcharts/docs"},
+    {github_id: 943149, author: 'mbostock', name: 'd3',
+        description: " JavaScript visualization library for HTML and SVG.",
+        website_url: "http://d3js.org",
+        doc_url: "https://github.com/mbostock/d3/wiki"}].each do |library|
 #   Library.create(library.merge({category_id: cat_chart.id}))
 # end
