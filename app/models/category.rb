@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
   def title
     self.full_name.capitalize
   end
+  
+  def libs
+    self.libraries.map{|library| library.name }.join(", ")
+  end
 end

@@ -1,7 +1,7 @@
 <div class="categories">
 	<% @categories.each do |category| %>
 		<div class="category">
-			<h3><%= link_to category.title, category_path(category.name) %></h3>
+			<h3><%= link_to category.title, category_path(category.name) %><span> <%= category.libs %></span></h3>
 		</div>
 	<% end %>
 </div>
