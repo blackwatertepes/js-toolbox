@@ -30,6 +30,22 @@ namespace :status do
       create_library(library, conn)
     end
   end
+  
+  task forms: :environment do
+    conn = establish_connection
+    
+    Category.find_by_name("form_validation").libraries.each do |library|
+      create_library(library, conn)
+    end
+  end
+  
+  task charts: :environment do
+    conn = establish_connection
+    
+    Category.find_by_name("charting").libraries.each do |library|
+      create_library(library, conn)
+    end
+  end
 end
 
 def establish_connection

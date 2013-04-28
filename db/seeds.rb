@@ -68,27 +68,73 @@
 #   Library.create(library.merge({category_id: cat_full.id}))
 # end
 
-cat_toolkit = Category.create(name: 'toolkits', full_name: 'Toolkits')
+# cat_toolkit = Category.create(name: 'toolkits', full_name: 'Toolkits')
+# 
+# [ {github_id: 167174, author: 'jquery', name: 'jquery',
+#     description: "jQuery JavaScript Library",
+#     website_url: "http://jquery.com",
+#     doc_url: "http://api.jquery.com/"},
+#   {github_id: 11573, author: 'mootools', name: 'mootools-core',
+#       description: "MooTools Core Repository",
+#       website_url: "http://mootools.net",
+#       doc_url: "http://mootools.net/docs/core"},
+#   {github_id: 5494, author: 'sstephenson', name: 'prototype',
+#       description: "Prototype JavaScript framework",
+#       website_url: "http://prototypejs.org",
+#       doc_url: "http://prototypejs.org/learn"},
+#   {github_id: 85670, author: 'yui', name: 'yui3',
+#     description: "YUI 3.x Source Tree",
+#     website_url: "http://yuilibrary.com",
+#     doc_url: "http://yuilibrary.com/yui/docs/"},
+#   {github_id: 233888, author: 'dojo', name: 'dojo',
+#     description: "The official read-only mirror of Dojo Core.",
+#     website_url: "http://dojotoolkit.org",
+#     doc_url: "http://dojotoolkit.org/documentation/"}].each do |library|
+#   Library.create(library.merge({category_id: cat_toolkit.id}))
+# end
 
-[ {github_id: 167174, author: 'jquery', name: 'jquery',
-    description: "jQuery JavaScript Library",
-    website_url: "http://jquery.com",
-    doc_url: "http://api.jquery.com/"},
-  {github_id: 11573, author: 'mootools', name: 'mootools-core',
-      description: "MooTools Core Repository",
-      website_url: "http://mootools.net",
-      doc_url: "http://mootools.net/docs/core"},
-  {github_id: 5494, author: 'sstephenson', name: 'prototype',
-      description: "Prototype JavaScript framework",
-      website_url: "http://prototypejs.org",
-      doc_url: "http://prototypejs.org/learn"},
-  {github_id: 85670, author: 'yui', name: 'yui3',
-    description: "YUI 3.x Source Tree",
-    website_url: "http://yuilibrary.com",
-    doc_url: "http://yuilibrary.com/yui/docs/"},
-  {github_id: 233888, author: 'dojo', name: 'dojo',
-    description: "The official read-only mirror of Dojo Core.",
-    website_url: "http://dojotoolkit.org",
-    doc_url: "http://dojotoolkit.org/documentation/"}].each do |library|
-  Library.create(library.merge({category_id: cat_toolkit.id}))
-end
+# cat _form = Category.create(name: 'form_validation', full_name: 'Form Validation')
+# 
+# [ {github_id: 276963, author: 'posabsolute', name: 'jQuery-Validation-Engine',
+#     description: "jQuery form validation plugin",
+#     website_url: "http://www.position-absolute.com/articles/jquery-form-validator-because-form-validation-is-a-mess",
+#     doc_url: "http://www.position-absolute.com/articles/jquery-form-validator-because-form-validation-is-a-mess"},
+#   {github_id: 7191565, author: 'guillaumepotier', name: 'Parsley.js',
+#       description: "Validate your forms, frontend, without writting a single line of javascript!",
+#       website_url: "http://parsleyjs.org",
+#       doc_url: "http://parsleyjs.org/documentation.html"},
+#   {github_id: 2574361, author: 'rickharrison', name: 'validate.js',
+#       description: "Lightweight JavaScript form validation library inspired by CodeIgniter.",
+#       website_url: "http://rickharrison.github.io/validate.js",
+#       doc_url: "http://rickharrison.github.io/validate.js"}].each do |library|
+#   Library.create(library.merge({category_id: cat_form.id}))
+# end
+# 
+# cat_chart = Category.create(name: 'charting', full_name: 'Charting')
+# 
+# [ {github_id: 8843683, author: 'nnnick', name: 'Chart.js',
+#     description: "Simple HTML5 Charts using the <canvas> tag",
+#     website_url: "",
+#     doc_url: ""},
+#   {github_id: 230249, author: 'DmitryBaranovskiy', name: 'g.raphael',
+#       description: "Charts for Raphaël",
+#       website_url: "http://g.raphaeljs.com",
+#       doc_url: "http://g.raphaeljs.com/reference.html"},
+#   {github_id: 1295612, author: 'flot', name: 'flot',
+#       description: "Attractive JavaScript charts for jQuery",
+#       website_url: "http://flotcharts.org",
+#       doc_url: "https://github.com/flot/flot/blob/master/API.md"},
+#   {github_id: 715547, author: 'highslide-software', name: 'highcharts.com',
+#       description: "Highcharts JS, the JavaScript charting framework",
+#       website_url: "http://highcharts.com",
+#       doc_url: "http://docs.highcharts.com/"},
+#   {github_id: 379530, author: 'benpickles', name: 'peity',
+#       description: "Progressive <canvas> bar, line and pie charts",
+#       website_url: "http://benpickles.github.io/peity",
+#       doc_url: "http://benpickles.github.io/peity"},
+#   {github_id: 7008068, author: 'tenXer', name: 'xcharts',
+#       description: "A D3-based library for building custom charts and graphs.",
+#       website_url: "http://tenxer.github.com/xcharts",
+#       doc_url: "http://tenxer.github.io/xcharts/docs"}].each do |library|
+#   Library.create(library.merge({category_id: cat_chart.id}))
+# end
