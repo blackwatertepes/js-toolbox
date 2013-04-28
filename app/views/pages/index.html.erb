@@ -1,3 +1,12 @@
+<div class="chart">
+	<div id="svg"></div>
+  	<ul id="legend">
+    	<li><div class="swatch" style="background-color: #156F9E;"></div><span>Watchers</span></li>
+    	<li><div class="swatch" style="background-color: #C47500;"></div><span>Forks</span></li>
+    	<li><div class="swatch" style="background-color: #9E157C;"></div><span>Open Issues</span></li>
+  	</ul>
+</div>
+
 <div class="libraries">
 	<% @libraries.each do |library| %>
 		<div class="library">
@@ -25,3 +34,27 @@
 		</div>
 	<% end %>
 </div>
+
+<script type="text/javascript">
+var info = {max: [], values: [], labels: [], urls: []};
+var data = [[],[],[]];
+
+<% @libraries.each do |library| %>
+	var vals = [<%= library.watchers %>, <%= library.forks %>, <%= library.issues %>];
+	info.values.push(vals);
+	info.labels.push("<%= library.name %>");
+	info.urls.push("<%= library.website_url %>");
+	for (var b = 0; b < vals.length; b++) {
+		info.max[b] = Math.max(info.max[b] || 0, vals[b]);
+	}
+<% end %>
+
+for (var c = 0; c < info.values.length; c++) {
+	var lib = info.values[c];
+	for (var d = 0; d < lib.length; d++) {
+		data[d].push(1 - lib[d] / info.max[d]);
+	}
+}
+
+createChart();
+</script>

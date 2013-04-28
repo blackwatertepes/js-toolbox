@@ -91,3 +91,38 @@ header {
 		}
 	}
 }
+
+.chart {
+
+	svg {
+	  background: rgba(255, 255, 255, .1);
+	  border-radius: 10px;
+	}
+
+	ul#legend {
+	  margin-top: 10px;
+	  
+		li {
+	  	  	display: inline-block;
+	  		width: 33%;
+			
+			.swatch {
+	  		 	width: 20px;
+	 		 	height: 20px;
+	  	   	 	display: inline-block;
+			}
+
+			span {
+	  			line-height: 20px;
+	  		  	vertical-align: top;
+	  		  	margin-left: 10px;
+			}
+		}
+	}
+}
+
+footer {
+	.footnote {
+	  font-size: 10px;
+	}
+}
