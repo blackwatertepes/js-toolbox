@@ -6,9 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Categories.delete_all
+Category.delete_all
+Library.delete_all
 
-cat_frameworks = Category.create(name: 'Frameworks')
+cat_framework = Category.create(name: 'Frameworks')
 
 [ {github_id: 952189, author: 'documentcloud', name: 'backbone', 
     description: "Give your JS App some Backbone with Models, Views, Collections, and Events",
@@ -46,5 +47,5 @@ cat_frameworks = Category.create(name: 'Frameworks')
     description: "Claypool is a small, fast, railable Javascript Application Framework  , built on jQuery that provides all the usual important patterns for large, long-lived client-side apps, server-side apps, or something strangely, beautifully in the middle.",
     website_url: "http://claypooljs.com",
     doc_url: "http://docs.jquery.com/Plugins/Claypool"}].each do |library|
-    cat_framework.libraries << Library.create()
+    Library.create(library.merge({category_id: cat_framework.id}))
   end

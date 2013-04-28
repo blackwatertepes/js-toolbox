@@ -45,3 +45,34 @@ header {
 		}
 	}
 }
+
+#main_content {
+	margin-top: 140px;
+}
+
+.library {
+	background: #eee;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	
+	h3 {
+		margin: 0;
+	}
+	
+	p {
+		font-weight: bold;
+	}
+	
+	section {
+		background: #fff;
+		border-radius: 8px;
+		line-height: 40px;
+		
+		a {
+			margin: 20px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
+}

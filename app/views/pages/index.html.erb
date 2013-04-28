@@ -1,0 +1,12 @@
+<div class="libraries">
+	<%= @libraries.each do |library| %>
+		<div class="library">
+			<h3><%= library.author %>/<%= library.name %></h3>
+			<p><%= library.description %></p>
+			<section>
+				<%= link_to "Website", library.website_url %>
+				<%= link_to "Documentation", library.doc_url %>
+			</section>
+		</div>
+	<% end %>
+</div>
