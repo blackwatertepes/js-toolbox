@@ -1,5 +1,6 @@
 Category.delete_all
 Library.delete_all
+Status.delete_all
 
 cat_framework = Category.create(name: 'frameworks', full_name: 'Frameworks (front-end)')
 
@@ -93,7 +94,7 @@ cat_toolkit = Category.create(name: 'toolkits', full_name: 'Toolkits')
   Library.create(library.merge({category_id: cat_toolkit.id}))
 end
 
-cat _form = Category.create(name: 'form_validation', full_name: 'Form Validation')
+cat_form = Category.create(name: 'form_validation', full_name: 'Form Validation')
 
 [ {github_id: 276963, author: 'posabsolute', name: 'jQuery-Validation-Engine',
     description: "jQuery form validation plugin",
