@@ -1,8 +1,8 @@
 namespace :status do
-  task frameworks: :environment do
+  task frameworks_front: :environment do
     conn = establish_connection
 
-    Category.find_by_name("frameworks").libraries.each do |library|
+    Category.find_by_name("frameworks_front").libraries.each do |library|
       create_library(library, conn)
     end
   end
@@ -11,6 +11,14 @@ namespace :status do
     conn = establish_connection
     
     Category.find_by_name("utilities").libraries.each do |library|
+      create_library(library, conn)
+    end
+  end
+  
+  task frameworks_full: :environment do
+    conn = establish_connection
+    
+    Category.find_by_name("frameworks_full").libraries.each do |library|
       create_library(library, conn)
     end
   end

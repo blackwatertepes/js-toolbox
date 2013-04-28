@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 # Category.delete_all
 # Library.delete_all
 # 
-# cat_framework = Category.create(name: 'Frameworks')
+# cat_framework = Category.create(name: 'frameworks', full_name: 'Frameworks (front-end)')
 # 
 # [ {github_id: 952189, author: 'documentcloud', name: 'backbone', 
 #     description: "Give your JS App some Backbone with Models, Views, Collections, and Events",
@@ -50,15 +42,28 @@
 #     Library.create(library.merge({category_id: cat_framework.id}))
 #   end
 
-cat_utility = Category.create(name: 'Utility')
+# cat_utility = Category.create(name: 'utilities', full_name: 'Utilities')
+# 
+# [ {github_id: 349241, author: 'documentcloud', name: 'underscore',
+#     description: "JavaScript's utility _ belt",
+#     website_url: "http://underscorejs.org",
+#     doc_url: "http://underscorejs.org"},
+#   {github_id: 3955647, author: 'bestiejs', name: 'lodash',
+#     description: "A low-level utility library delivering consistency, customization, performance, and extra features.",
+#     website_url: "http://lodash.com",
+#     doc_url: "http://lodash.com"}].each do |library|
+#   Library.create(library.merge({category_id: cat_utility.id}))
+# end
 
-[ {github_id: 349241, author: 'documentcloud', name: 'underscore',
-    description: "JavaScript's utility _ belt",
-    website_url: "http://underscorejs.org",
-    doc_url: "http://underscorejs.org"},
-  {github_id: 3955647, author: 'bestiejs', name: 'lodash',
-    description: "A low-level utility library delivering consistency, customization, performance, and extra features.",
-    website_url: "http://lodash.com",
-    doc_url: "http://lodash.com"}].each do |library|
-  Library.create(library.merge({category_id: cat_utility.id}))
+cat_full = Category.create(name: 'frameworks_full', full_name: 'Frameworks (full-stack)')
+
+[ {github_id: 3214406, author: 'meteor', name: 'meteor',
+    description: "Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",
+    website_url: "http://meteor.com",
+    doc_url: "http://docs.meteor.com"},
+  {github_id: 1590408, author: 'codeparty', name: 'derby',
+    description: "MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers",
+    website_url: "http://derbyjs.com",
+    doc_url: "http://derbyjs.com"}].each do |library|
+  Library.create(library.merge({category_id: cat_full.id}))
 end

@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   def category
     @category = Category.includes(:libraries => :statuses).find_by_name(params[:name])
     @libraries = @category.libraries
-    @page = @category.name.capitalize
+    @page = @category.title
   end
 end

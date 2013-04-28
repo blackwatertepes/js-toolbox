@@ -1,9 +1,9 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :full_name
   
   has_many :libraries
   
   def title
-    self.name.capitalize
+    self.full_name.capitalize
   end
 end
