@@ -1,11 +1,10 @@
 class PagesController < ApplicationController
   def index
-    @category = Category.first
-    @libraries = @category.libraries
+    @categories = Category.all
   end
   
   def category
-    @category = Category.find_by_name(params[:name])
+    @category = Category.includes(:libraries => :statuses).find_by_name(params[:name])
     @libraries = @category.libraries
   end
 end
