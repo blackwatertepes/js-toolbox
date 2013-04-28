@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.includes(:libraries).order(:name)
     @page = "Home"
   end
   

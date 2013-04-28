@@ -55,15 +55,40 @@
 #   Library.create(library.merge({category_id: cat_utility.id}))
 # end
 
-cat_full = Category.create(name: 'frameworks_full', full_name: 'Frameworks (full-stack)')
+# cat_full = Category.create(name: 'frameworks_full', full_name: 'Frameworks (full-stack)')
+# 
+# [ {github_id: 3214406, author: 'meteor', name: 'meteor',
+#     description: "Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",
+#     website_url: "http://meteor.com",
+#     doc_url: "http://docs.meteor.com"},
+#   {github_id: 1590408, author: 'codeparty', name: 'derby',
+#     description: "MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers",
+#     website_url: "http://derbyjs.com",
+#     doc_url: "http://derbyjs.com"}].each do |library|
+#   Library.create(library.merge({category_id: cat_full.id}))
+# end
 
-[ {github_id: 3214406, author: 'meteor', name: 'meteor',
-    description: "Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",
-    website_url: "http://meteor.com",
-    doc_url: "http://docs.meteor.com"},
-  {github_id: 1590408, author: 'codeparty', name: 'derby',
-    description: "MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers",
-    website_url: "http://derbyjs.com",
-    doc_url: "http://derbyjs.com"}].each do |library|
-  Library.create(library.merge({category_id: cat_full.id}))
+cat_toolkit = Category.create(name: 'toolkits', full_name: 'Toolkits')
+
+[ {github_id: 167174, author: 'jquery', name: 'jquery',
+    description: "jQuery JavaScript Library",
+    website_url: "http://jquery.com",
+    doc_url: "http://api.jquery.com/"},
+  {github_id: 11573, author: 'mootools', name: 'mootools-core',
+      description: "MooTools Core Repository",
+      website_url: "http://mootools.net",
+      doc_url: "http://mootools.net/docs/core"},
+  {github_id: 5494, author: 'sstephenson', name: 'prototype',
+      description: "Prototype JavaScript framework",
+      website_url: "http://prototypejs.org",
+      doc_url: "http://prototypejs.org/learn"},
+  {github_id: 85670, author: 'yui', name: 'yui3',
+    description: "YUI 3.x Source Tree",
+    website_url: "http://yuilibrary.com",
+    doc_url: "http://yuilibrary.com/yui/docs/"},
+  {github_id: 233888, author: 'dojo', name: 'dojo',
+    description: "The official read-only mirror of Dojo Core.",
+    website_url: "http://dojotoolkit.org",
+    doc_url: "http://dojotoolkit.org/documentation/"}].each do |library|
+  Library.create(library.merge({category_id: cat_toolkit.id}))
 end
