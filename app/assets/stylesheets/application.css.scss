@@ -68,11 +68,26 @@ header {
 		background: #fff;
 		border-radius: 8px;
 		line-height: 40px;
+		margin: 10px 0px 0px;
 		
 		a {
 			margin: 20px;
 			text-decoration: none;
 			font-weight: bold;
+		}
+		
+		.set {
+			margin: 0px 20px;
+			width: 180px;
+			display: inline-block;
+			
+			.label {
+				font-weight: bold;
+			}
+			
+			.field {
+				display: block;
+			}
 		}
 	}
 }
