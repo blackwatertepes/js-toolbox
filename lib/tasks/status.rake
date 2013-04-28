@@ -46,6 +46,8 @@ namespace :status do
       create_library(library, conn)
     end
   end
+  
+  task all: [:frameworks_front, :utilities, :frameworks_full, :toolkits, :forms, :charts]
 end
 
 def establish_connection
