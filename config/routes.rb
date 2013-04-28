@@ -1,5 +1,5 @@
 Trending::Application.routes.draw do
-  get "pages/index"
+  get "category/:name" => "pages#category", as: :category
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
