@@ -118,7 +118,7 @@ cat_chart = Category.create(name: 'charting', full_name: 'Charting')
     website_url: "",
     doc_url: ""},
   {github_id: 230249, author: 'DmitryBaranovskiy', name: 'g.raphael',
-      description: "Charts for Raphaël",
+      description: "Charts for Raphael",
       website_url: "http://g.raphaeljs.com",
       doc_url: "http://g.raphaeljs.com/reference.html"},
   {github_id: 1295612, author: 'flot', name: 'flot',
