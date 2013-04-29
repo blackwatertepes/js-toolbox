@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :status do
-    downloads 1
-    watchers 1
-    forks 1
-    issues 1
+    downloads { rand(1000) }
+    watchers { rand(1000) }
+    forks { rand(100) }
+    issues { rand(100) }
     
     library
   end
