@@ -45,4 +45,8 @@ describe Library do
       library.issues.should eq(library.statuses.last.issues)
     end
   end
+  
+  it "should have a github url" do
+    library.github_url.should include("#{library.author}/#{library.name}")
+  end
 end
