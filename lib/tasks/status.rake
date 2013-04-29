@@ -1,4 +1,11 @@
 namespace :status do
+  task test: :environment do
+    conn = establish_connection
+    
+    library = Library.all.sample
+    create_status(library, conn)
+  end
+  
   task all: :environment do
     conn = establish_connection
     
@@ -32,11 +39,10 @@ def create_status(library, conn)
   lib_url = "/repos/#{library.author}/#{library.name}"
   response = conn.get lib_url
   data = JSON.parse(response.body)
-  params = {watchers: data["watchers"], issues: data["open_issues"], forks: data["forks"]}
+
+  pushed = library.pushed_at && library.pushed_at != data["pushed_at"] ? true : false
+  params = {watchers: data["watchers"], issues: data["open_issues"], forks: data["forks"], library_id: library.id, pushed: pushed}
    
-  # response = conn.get "#{lib_url}/downloads"
-  # data = JSON.parse(response.body)
-  # params.merge({downloads: data.last["download_count"]}) if data.last
-  
-  Status.create(params.merge({library_id: library.id}))
+  library.update_attribute(:pushed_at, data["pushed_at"])
+  Status.create(params)
 end

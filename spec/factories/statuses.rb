@@ -6,6 +6,7 @@ FactoryGirl.define do
     watchers { rand(1000) }
     forks { rand(100) }
     issues { rand(100) }
+    pushed { false }
     
     library
   end
