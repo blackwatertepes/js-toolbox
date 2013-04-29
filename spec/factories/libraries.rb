@@ -7,8 +7,8 @@ FactoryGirl.define do
     description "This is a library"
     website_url "http://google.com"
     doc_url "http://google.com"
-    github_id 2134
-    
+    sequence(:github_id) {|n| n }
+        
     category
   end
 end

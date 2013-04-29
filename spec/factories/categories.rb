@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    name "js_library"
-    full_name "JS Library"
+    sequence(:name) {|n| "js_library#{n}" }
+    sequence(:full_name) {|n| "JS Library #{n}" }
   end
 end
