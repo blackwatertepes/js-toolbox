@@ -136,7 +136,10 @@ header {
 }
 
 footer {
-	.footnote {
 	  font-size: 10px;
-	}
+	  line-height: 50px;
+	  
+	  .footnote {
+		  float: right;
+	  }
 }
