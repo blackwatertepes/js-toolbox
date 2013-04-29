@@ -7,4 +7,8 @@ describe Library do
   it { should validate_presence_of :name }
   
   it { should validate_uniqueness_of :github_id }
+  
+  it { should belong_to :category }
+  it { should have_many :likes }
+  it { should have_many :statuses }
 end
