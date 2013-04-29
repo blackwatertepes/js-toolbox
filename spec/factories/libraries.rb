@@ -2,10 +2,13 @@
 
 FactoryGirl.define do
   factory :library do
-    name "MyString"
-    description "MyText"
-    website_url "MyString"
-    doc_url "MyString"
-    github_url "MyString"
+    author "joeSmith"
+    name "library"
+    description "This is a library"
+    website_url "http://google.com"
+    doc_url "http://google.com"
+    github_id 2134
+    
+    category
   end
 end

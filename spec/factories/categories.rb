@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    name "MyString"
+    name "js_library"
+    full_name "JS Library"
   end
 end

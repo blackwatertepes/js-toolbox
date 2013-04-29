@@ -28,4 +28,8 @@ class Library < ActiveRecord::Base
   def issues
     status.issues || 0
   end
+    # 
+  # def github_url
+  #   "http://github.com/#{self.author}/#{self.name}"
+  # end
 end
