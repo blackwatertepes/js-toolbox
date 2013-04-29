@@ -1,53 +1,13 @@
 namespace :status do
-  task frameworks_front: :environment do
-    conn = establish_connection
-
-    Category.find_by_name("frameworks").libraries.each do |library|
-      create_library(library, conn)
-    end
-  end
-  
-  task utilities: :environment do
+  task all: :environment do
     conn = establish_connection
     
-    Category.find_by_name("utilities").libraries.each do |library|
-      create_library(library, conn)
+    Category.all.each do |category|
+      category.libraries.each do |library|
+        create_status(library, conn)
+      end
     end
   end
-  
-  task frameworks_full: :environment do
-    conn = establish_connection
-    
-    Category.find_by_name("frameworks_full").libraries.each do |library|
-      create_library(library, conn)
-    end
-  end
-  
-  task toolkits: :environment do
-    conn = establish_connection
-    
-    Category.find_by_name("toolkits").libraries.each do |library|
-      create_library(library, conn)
-    end
-  end
-  
-  task forms: :environment do
-    conn = establish_connection
-    
-    Category.find_by_name("form_validation").libraries.each do |library|
-      create_library(library, conn)
-    end
-  end
-  
-  task charts: :environment do
-    conn = establish_connection
-    
-    Category.find_by_name("charting").libraries.each do |library|
-      create_library(library, conn)
-    end
-  end
-  
-  task all: [:frameworks_front, :utilities, :frameworks_full, :toolkits, :forms, :charts]
 end
 
 desc "Pings PING_URL to keep a dyno alive"
@@ -68,7 +28,7 @@ def establish_connection
   return conn
 end
 
-def create_library(library, conn)
+def create_status(library, conn)
   lib_url = "/repos/#{library.author}/#{library.name}"
   response = conn.get lib_url
   data = JSON.parse(response.body)
