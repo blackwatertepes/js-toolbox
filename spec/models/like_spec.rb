@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Like do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of :library_id }
 end

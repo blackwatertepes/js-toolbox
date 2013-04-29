@@ -1,3 +1,3 @@
 class Like < ActiveRecord::Base
-  # attr_accessible :title, :body
+  validates_presence_of :library_id
 end

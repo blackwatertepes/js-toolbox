@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Category do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :full_name }
+  
+  it { should validate_uniqueness_of :name}
+  it { should validate_uniqueness_of :full_name }
 end
