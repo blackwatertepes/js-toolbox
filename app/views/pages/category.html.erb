@@ -30,6 +30,10 @@
 					<span class="label">Issues</span>
 					<span class="field"><%= library.issues %></span>
 				</div>
+				<div class="set">
+					<span class="label">Last Push</span>
+					<span class="field"><%= time_ago_in_words(library.pushed_at) %> ago</span>
+				</div>
 			</section>
 		</div>
 	<% end %>
