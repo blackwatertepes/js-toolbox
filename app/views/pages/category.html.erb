@@ -10,7 +10,7 @@
 <div class="libraries">
 	<% @libraries.each do |library| %>
 		<div class="library">
-			<h3><%= library.author %>/<%= library.name %></h3>
+			<h3><%= link_to "#{library.author}/#{library.name}", github_url(library.author, library.name) %></h3>
 			<p><%= library.description %></p>
 			<section>
 				<%= link_to "Website", library.website_url %>
