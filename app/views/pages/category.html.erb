@@ -21,19 +21,30 @@
 			<section>
 				<div class="set">
 					<span class="label">Watchers</span>
-					<span class="field"><%= library.watchers %></span>
+					<div class="field">
+						<span><%= library.watchers %></span>
+						<span class="change <%= change_class(library.watchers_change) %>"><%= format_change(library.watchers_change) %>%</span>
+					</div>
 				</div>
 				<div class="set">
 					<span class="label">Forks</span>
-					<span class="field"><%= library.forks %></span>
+					<div class="field">
+						<span><%= library.forks %></span>
+						<span class="change <%= change_class(library.forks_change) %>"><%= format_change(library.forks_change) %>%</span>
+					</div>
 				</div>
 				<div class="set">
 					<span class="label">Issues</span>
-					<span class="field"><%= library.issues %></span>
+					<div class="field">
+						<span><%= library.issues %></span>
+						<span class="change <%= change_class(library.issues_change) %>"><%= format_change(library.issues_change) %>%</span>
+					</div>
 				</div>
 				<div class="set">
 					<span class="label">Last Push</span>
-					<span class="field"><%= time_ago_in_words(library.pushed_at) %> ago</span>
+					<div class="field">
+						<span><%= time_ago_in_words(library.pushed_at) %> ago</span>
+					</div>
 				</div>
 			</section>
 		</div>

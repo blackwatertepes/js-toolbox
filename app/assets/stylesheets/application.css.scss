@@ -101,6 +101,20 @@ header {
 			
 			.field {
 				display: block;
+				
+				.change {
+					color: #999;
+					margin-left: 20px;
+					font-size: 12px;
+				}
+				
+				.up {
+					color: green;
+				}
+				
+				.down {
+					color: red;
+				}
 			}
 		}
 	}

@@ -13,6 +13,10 @@ class Library < ActiveRecord::Base
     self.statuses.last
   end
   
+  def status_prev
+    self.statuses.first
+  end
+  
   def downloads
     status.downloads || 0
   end
@@ -21,12 +25,24 @@ class Library < ActiveRecord::Base
     status.watchers || 0
   end
   
+  def watchers_change
+    (status.watchers - status_prev.watchers) / status.watchers.to_f * 100
+  end
+  
   def forks
     status.forks || 0
   end
   
+  def forks_change
+    (status.forks - status_prev.forks) / status.forks.to_f * 100
+  end
+  
   def issues
     status.issues || 0
+  end
+  
+  def issues_change
+    (status.issues - status_prev.issues) / status.issues.to_f * 100
   end
 
   def github_url
