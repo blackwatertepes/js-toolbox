@@ -10,4 +10,9 @@ module PagesHelper
     return "up" if change > 0
     return "down" if change < 0
   end
+  
+  def trim_name(name)
+    return "#{name[0..12]}..." if name.length > 16
+    return name
+  end
 end

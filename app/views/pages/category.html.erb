@@ -58,7 +58,7 @@ var data = [[],[],[]];
 <% @libraries.each do |library| %>
 	var vals = [<%= library.watchers %>, <%= library.forks %>, <%= library.issues %>];
 	info.values.push(vals);
-	info.labels.push("<%= library.name %>");
+	info.labels.push("<%= trim_name(library.name) %>");
 	info.urls.push("#<%= library.name %>");
 	for (var b = 0; b < vals.length; b++) {
 		info.max[b] = Math.max(info.max[b] || 0, vals[b]);
