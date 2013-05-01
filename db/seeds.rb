@@ -1,16 +1,12 @@
-cat = Category.create(name: 'testing', full_name: 'Testing')
+cat = Category.create(name: 'templating', full_name: 'Templating')
 
-[ {github_id: 84009, author: 'pivotal', name: 'jasmine',
-      description: "DOM-less simple JavaScript testing framework",
-      website_url: "http://pivotal.github.io/jasmine/",
-      doc_url: "http://pivotal.github.io/jasmine/"},
-  {github_id: 1451352, author: 'visionmedia', name: 'mocha',
-        description: "mocha - simple, flexible, fun javascript test framework for node.js & the browser. (BDD, TDD, QUnit styles via interfaces)",
-        website_url: "http://visionmedia.github.io/mocha/",
-        doc_url: "http://visionmedia.github.io/mocha/"},
-  {github_id: 259691, author: 'jquery', name: 'qunit',
-        description: "An easy-to-use JavaScript Unit Testing framework.",
-        website_url: "http://qunitjs.com/",
-        doc_url: "http://api.qunitjs.com/"}].each do |library|
+[ {github_id: 326688, author: 'janl', name: 'mustache.js',
+      description: "Minimal templating with {{mustaches}} in JavaScript",
+      website_url: "https://github.com/janl/mustache.js",
+      doc_url: "https://github.com/janl/mustache.js"},
+  {github_id: 809601, author: 'wycats', name: 'handlebars.js',
+        description: "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.",
+        website_url: "http://handlebarsjs.com",
+        doc_url: "http://handlebarsjs.com"}].each do |library|
   Library.create(library.merge({category_id: cat.id}))
 end
