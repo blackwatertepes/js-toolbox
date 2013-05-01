@@ -2,7 +2,7 @@ class Library < ActiveRecord::Base
   attr_accessible :description, :doc_url, :name, :website_url, :github_id, :author, :category_id
   
   validates_presence_of :github_id, :category_id, :author, :name
-  validates_uniqueness_of :github_id
+  # validates_uniqueness_of :github_id
   
   belongs_to :category
   
