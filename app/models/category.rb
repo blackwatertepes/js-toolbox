@@ -11,6 +11,6 @@ class Category < ActiveRecord::Base
   end
   
   def libs
-    self.libraries.map{|library| library.name }.join(", ")
+    self.libraries.map{|library| library.name }.sort.join(", ")
   end
 end
