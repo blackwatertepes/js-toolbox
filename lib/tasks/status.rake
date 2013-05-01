@@ -14,6 +14,13 @@ namespace :status do
     end
   end
   
+  task last_lib: :environment do
+    conn = establish_connection
+    
+    library = Library.last
+    create_status(library, conn)
+  end
+  
   task all: :environment do
     conn = establish_connection
     
