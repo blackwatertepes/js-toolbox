@@ -6,6 +6,14 @@ namespace :status do
     create_status(library, conn)
   end
   
+  task last: :environment do
+    conn = establish_connection
+    
+    Category.last.libraries.each do |library|
+      create_status(library, conn)
+    end
+  end
+  
   task all: :environment do
     conn = establish_connection
     
