@@ -9,6 +9,8 @@ class Library < ActiveRecord::Base
   has_many :statuses
   has_many :likes
   
+  scope :by_watchers, includes(:statuses).order("statuses.watchers DESC")
+  
   def status
     self.statuses.last
   end
