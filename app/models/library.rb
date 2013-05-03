@@ -12,11 +12,11 @@ class Library < ActiveRecord::Base
   scope :by_watchers, includes(:statuses).order("statuses.watchers DESC")
   
   def status
-    self.statuses.last
+    Status.where("library_id = ?", self.id).order("created_at DESC").first
   end
   
   def status_prev
-    self.statuses.first
+    Status.where("library_id = ?", self.id).order("created_at ASC").first
   end
   
   def downloads

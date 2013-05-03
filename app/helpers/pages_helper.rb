@@ -1,5 +1,6 @@
 module PagesHelper
   def format_change(change)
+    return "0.00" if change.nil?
     formatted = number_with_precision(change, precision: 2)
     return "+#{formatted}" if change > 0
     return formatted if change <= 0
