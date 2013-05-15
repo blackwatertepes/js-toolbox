@@ -19,6 +19,10 @@
 			</section>
 			
 			<section>
+				<div class="line-graph"></div>
+			</section>
+			
+			<section>
 				<div class="set">
 					<span class="label">Watchers</span>
 					<div class="field">
@@ -52,19 +56,23 @@
 </div>
 
 <script type="text/javascript">
-var info = {max: [], values: [], labels: [], urls: []};
-var data = [[],[],[]];
+var info = {
+			values: [<%= @libraries.map{|lib| [lib.watchers, lib.forks, lib.issues].to_s }.join(",") %>], 
+			labels: ['<%= @libraries.map{|lib| trim_name(lib.name)}.join("\',\'").html_safe %>'], 
+			urls: ['#<%= @libraries.map{|lib| lib.name }.join("\',\'#").html_safe %>'],
+			max: [[0], [0], [0]]
+		}
+	 , data = [[],[],[]];
 
-<% @libraries.each do |library| %>
-	var vals = [<%= library.watchers %>, <%= library.forks %>, <%= library.issues %>];
-	info.values.push(vals);
-	info.labels.push("<%= trim_name(library.name) %>");
-	info.urls.push("#<%= library.name %>");
-	for (var b = 0; b < vals.length; b++) {
-		info.max[b] = Math.max(info.max[b] || 0, vals[b]);
-	}
-<% end %>
+// Determine maximum values for the chart
+for (var a = 0; a < info.values.length; a++) {
+	var vals = info.values[a]
+ 	for (var b = 0; b < vals.length; b++) {
+ 		info.max[b] = Math.max(vals[b], info.max[b])
+ 	}
+}
 
+// Divide all values into the max value for charting
 for (var c = 0; c < info.values.length; c++) {
 	var lib = info.values[c];
 	for (var d = 0; d < lib.length; d++) {
@@ -72,5 +80,5 @@ for (var c = 0; c < info.values.length; c++) {
 	}
 }
 
-createChart();
+D3.bar_chart(info, data);
 </script>
