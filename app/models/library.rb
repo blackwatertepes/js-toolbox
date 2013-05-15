@@ -46,6 +46,10 @@ class Library < ActiveRecord::Base
   def issues_change
     (status.issues - status_prev.issues) / status.issues.to_f * 100
   end
+  
+  def recent_pushes
+    statuses.select{|status| status.pushed }.count
+  end
 
   def github_url
     "http://github.com/#{self.author}/#{self.name}"

@@ -19,10 +19,6 @@
 			</section>
 			
 			<section>
-				<div class="line-graph"></div>
-			</section>
-			
-			<section>
 				<div class="set">
 					<span class="label">Watchers</span>
 					<div class="field">
@@ -45,9 +41,9 @@
 					</div>
 				</div>
 				<div class="set">
-					<span class="label">Last Push</span>
+					<span class="label"># of Pushes</span>
 					<div class="field">
-						<span><%= time_ago_in_words(library.pushed_at) %> ago</span>
+						<span><%= library.recent_pushes %></span>
 					</div>
 				</div>
 			</section>
