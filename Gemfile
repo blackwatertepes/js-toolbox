@@ -33,8 +33,8 @@ end
 
 gem 'jquery-rails'
 gem 'faraday'
-gem 'bourbon'
-gem 'newrelic_rpm'
+# gem 'bourbon'
+# gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
