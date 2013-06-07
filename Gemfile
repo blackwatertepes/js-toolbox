@@ -25,14 +25,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'factory_girl_rails'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
 
 gem 'jquery-rails'
 gem 'faraday'
+gem 'bourbon'
+gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
