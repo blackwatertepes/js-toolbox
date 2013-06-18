@@ -31,6 +31,10 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
+group :test do
+  gem 'rake'
+end
+
 gem 'jquery-rails'
 gem 'faraday'
 # gem 'bourbon'
