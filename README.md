@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/mceachen/chromotype.png?branch=master)](http://travis-ci.org/mceachen/chromotype)
+# JS Toolbox [![Build Status](https://api.travis-ci.org/mceachen/chromotype.png?branch=master)](http://travis-ci.org/mceachen/chromotype)
 
 Currently displaying various Github stats about a variety of Javascript libraries.
 
