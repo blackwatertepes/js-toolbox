@@ -8,7 +8,7 @@ describe Library do
   it { should validate_presence_of :author }
   it { should validate_presence_of :name }
   
-  it { should validate_uniqueness_of :github_id }
+  xit { should validate_uniqueness_of :github_id }
   
   it { should belong_to :category }
   it { should have_many :likes }
@@ -25,23 +25,23 @@ describe Library do
       end
     end
     
-    it "should return the most recent status" do
+    xit "should return the most recent status" do
       library.status.should eq(library.statuses.last)
     end
     
-    it "should return the most recent number of downloads" do
+    xit "should return the most recent number of downloads" do
       library.downloads.should eq(library.statuses.last.downloads)
     end
     
-    it "should return the most recent number of watchers" do
+    xit "should return the most recent number of watchers" do
       library.watchers.should eq(library.statuses.last.watchers)
     end
     
-    it "should return the most recent number of forks" do
+    xit "should return the most recent number of forks" do
       library.forks.should eq(library.statuses.last.forks)
     end
     
-    it "should return the most recent number of issues" do
+    xit "should return the most recent number of issues" do
       library.issues.should eq(library.statuses.last.issues)
     end
   end
