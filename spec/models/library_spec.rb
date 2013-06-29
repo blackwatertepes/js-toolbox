@@ -24,24 +24,24 @@ describe Library do
         library.statuses << create(:status)
       end
     end
-    
-    xit "should return the most recent status" do
+
+    it "should return the most recent status" do
       library.status.should eq(library.statuses.last)
     end
     
-    xit "should return the most recent number of downloads" do
+    it "should return the most recent number of downloads" do
       library.downloads.should eq(library.statuses.last.downloads)
     end
     
-    xit "should return the most recent number of watchers" do
+    it "should return the most recent number of watchers" do
       library.watchers.should eq(library.statuses.last.watchers)
     end
     
-    xit "should return the most recent number of forks" do
+    it "should return the most recent number of forks" do
       library.forks.should eq(library.statuses.last.forks)
     end
     
-    xit "should return the most recent number of issues" do
+    it "should return the most recent number of issues" do
       library.issues.should eq(library.statuses.last.issues)
     end
   end

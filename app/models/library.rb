@@ -12,11 +12,11 @@ class Library < ActiveRecord::Base
   scope :by_watchers, includes(:statuses).order("statuses.watchers DESC")
   
   def status
-    statuses.first
+    statuses.where('watchers > ?', 0).last
   end
   
   def status_prev
-    statuses.last
+    statuses.where('watchers > ?', 0).first
   end
   
   def downloads
