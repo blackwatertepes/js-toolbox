@@ -32,6 +32,17 @@ namespace :status do
   end
 end
 
+desc "Make an automated commit to github"
+task git_commit: :environment do
+  days =  Date.today - Date.new(0)
+  puts days%2
+  system("git pull origin master")
+  system("echo $RANDOM > rand.txt")
+  system("git add rand.txt")
+  system("git commit -m 'random update'")
+  system("git push origin master")
+end
+
 desc "Pings PING_URL to keep a dyno alive"
 task :dyno_ping do
   require "net/http"
