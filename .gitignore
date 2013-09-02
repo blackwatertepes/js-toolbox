@@ -13,4 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
+=======
+*.dump
+>>>>>>> 2ecb767ca3c7440d9d174ac860afdedef314c716
 coverage
