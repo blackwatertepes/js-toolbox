@@ -8,6 +8,6 @@ require File.expand_path('../config/application', __FILE__)
 
 Trending::Application.load_tasks
 
-Rspec::Core::RakeTask.new
+# Rspec::Core::RakeTask.new
 
 task :default => :spec

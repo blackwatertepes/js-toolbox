@@ -25,7 +25,7 @@ end
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
