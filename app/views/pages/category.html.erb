@@ -16,6 +16,7 @@
 			<section>
 				<%= link_to "Website", library.website_url %>
 				<%= link_to "Documentation", library.doc_url %>
+        <span class="last-sync">Last sync with Github: <%= format_date(library.last_sync) %></span>
 			</section>
 			
 			<section>

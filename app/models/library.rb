@@ -24,27 +24,39 @@ class Library < ActiveRecord::Base
   end
   
   def watchers
-    status.watchers || 0
+    status ? status.watchers || 0 : 0
+  end
+
+  def watchers_prev
+    status_prev ? status_prev.watchers || 0 : 0
   end
   
   def watchers_change
-    (status.watchers - status_prev.watchers) / status.watchers.to_f * 100
+    (watchers - watchers_prev) / watchers.to_f * 100
   end
   
   def forks
-    status.forks || 0
+    status ? status.forks || 0 : 0
+  end
+
+  def forks_prev
+    status_prev ? status_prev.forks || 0 : 0
   end
   
   def forks_change
-    (status.forks - status_prev.forks) / status.forks.to_f * 100
+    (forks - forks_prev) / forks.to_f * 100
   end
   
   def issues
-    status.issues || 0
+    status ? status.issues || 0 : 0
+  end
+
+  def issues_prev
+    status_prev ? status_prev.issues || 0 : 0
   end
   
   def issues_change
-    (status.issues - status_prev.issues) / status.issues.to_f * 100
+    (issues - issues_prev) / issues.to_f * 100
   end
   
   def recent_pushes
@@ -53,5 +65,9 @@ class Library < ActiveRecord::Base
 
   def github_url
     "http://github.com/#{self.author}/#{self.name}"
+  end
+
+  def last_sync
+    status ? status.updated_at : updated_at
   end
 end
